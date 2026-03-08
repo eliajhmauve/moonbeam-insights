@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import StarField from "@/components/StarField";
 import BirthForm from "@/components/BirthForm";
 import TriangleDisplay from "@/components/TriangleDisplay";
