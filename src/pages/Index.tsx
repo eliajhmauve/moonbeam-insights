@@ -45,19 +45,30 @@ const Index = () => {
         </div>
 
         {!result ? (
-          <BirthForm onSubmit={handleSubmit} />
+          <>
+            <BirthForm onSubmit={handleSubmit} />
+            <button onClick={() => navigate("/compatibility")}
+              className="mt-8 text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4">
+              💞 前往星座配對分析
+            </button>
+          </>
         ) : (
           <div className="w-full max-w-md space-y-8">
             <TriangleDisplay sun={result.sun} moon={result.moon} rising={result.rising} />
             <ResultCard sun={result.sun} moon={result.moon} rising={result.rising} />
             <ShareCard sun={result.sun} moon={result.moon} rising={result.rising} />
 
-            <div className="text-center pt-4">
+            <div className="text-center pt-4 space-y-3">
               <button
                 onClick={handleReset}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4"
               >
                 重新查詢
+              </button>
+              <br />
+              <button onClick={() => navigate("/compatibility")}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4">
+                💞 前往星座配對分析
               </button>
             </div>
           </div>
