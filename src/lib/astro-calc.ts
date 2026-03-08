@@ -2,20 +2,21 @@ import { ZODIAC_ORDER } from "./zodiac-data";
 
 // Get sun sign from month/day
 export function getSunSign(month: number, day: number): string {
-  const dates: [number, number, string][] = [
-    [1, 20, "capricorn"], [2, 19, "aquarius"], [3, 20, "pisces"],
-    [4, 20, "aries"], [5, 21, "taurus"], [6, 21, "gemini"],
-    [7, 22, "cancer"], [8, 23, "leo"], [9, 23, "virgo"],
-    [10, 23, "libra"], [11, 22, "scorpio"], [12, 22, "sagittarius"],
+  // [startMonth, startDay, sign] — each entry is the START of that sign
+  const signs: [number, number, string][] = [
+    [1, 20, "aquarius"], [2, 19, "pisces"], [3, 21, "aries"],
+    [4, 20, "taurus"], [5, 21, "gemini"], [6, 21, "cancer"],
+    [7, 23, "leo"], [8, 23, "virgo"], [9, 23, "libra"],
+    [10, 23, "scorpio"], [11, 22, "sagittarius"], [12, 22, "capricorn"],
   ];
 
-  for (let i = dates.length - 1; i >= 0; i--) {
-    const [m, d, sign] = dates[i];
+  for (let i = signs.length - 1; i >= 0; i--) {
+    const [m, d, sign] = signs[i];
     if (month > m || (month === m && day >= d)) {
       return sign;
     }
   }
-  return "capricorn";
+  return "capricorn"; // Jan 1-19
 }
 
 // Simplified moon sign calculation using Julian Day Number approach
