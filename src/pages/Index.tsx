@@ -14,6 +14,7 @@ interface Result {
 }
 
 const Index = () => {
+  const navigate = useNavigate();
   const [result, setResult] = useState<Result | null>(null);
 
   const handleSubmit = (data: { year: number; month: number; day: number; hour?: number; minute?: number }) => {
