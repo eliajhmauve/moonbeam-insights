@@ -47,10 +47,16 @@ const Index = () => {
         {!result ? (
           <>
             <BirthForm onSubmit={handleSubmit} />
-            <button onClick={() => navigate("/compatibility")}
-              className="mt-8 text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4">
-              💞 前往星座配對分析
-            </button>
+            <div className="mt-8 flex flex-col items-center gap-3">
+              <button onClick={() => navigate("/daily")}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4">
+                🔮 查看每日運勢
+              </button>
+              <button onClick={() => navigate("/compatibility")}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4">
+                💞 前往星座配對分析
+              </button>
+            </div>
           </>
         ) : (
           <div className="w-full max-w-md space-y-8">
