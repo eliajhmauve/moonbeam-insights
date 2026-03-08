@@ -43,7 +43,7 @@ export function getMoonSign(year: number, month: number, day: number): string {
 // Rising sign changes every ~2 hours, full cycle in 24 hours
 // At sunrise (~6am), rising sign ≈ sun sign
 export function getRisingSign(month: number, day: number, hour: number, minute: number): string {
-  const sunSign = getSunSign(month, day);
+  const sunSign = getSunSign(month, day) as typeof ZODIAC_ORDER[number];
   const sunIndex = ZODIAC_ORDER.indexOf(sunSign);
 
   // Hours since 6am (sunrise approximation)
