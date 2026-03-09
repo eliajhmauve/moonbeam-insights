@@ -4,8 +4,8 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
-export default defineConfig(({
-  base: '/moonbeam-insights/', mode }) => ({
+export default defineConfig(({ mode }) => ({
+  base: '/moonbeam-insights/',
   server: {
     host: "::",
     port: 8080,
