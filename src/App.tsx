@@ -15,7 +15,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/moonbeam-insights">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/compatibility" element={<Compatibility />} />
